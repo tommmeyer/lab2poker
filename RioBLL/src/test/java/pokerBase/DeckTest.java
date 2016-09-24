@@ -33,7 +33,8 @@ public class DeckTest {
 	@Test
 	public void BuildDeck(){	
 		Deck deck = new Deck();
-		
+		assertEquals(deck.getDeckSize(), 52);
+		assertNotEquals(deck.getDeckSize(),53);
 		
 	}
 

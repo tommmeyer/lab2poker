@@ -20,9 +20,9 @@ public class Deck {
 		Collections.shuffle(getDeckCards);
 	}
 	public Card Draw() {
-		return getDeckCards.remove(0);
-	}
-	private int getDeckSize(){
+			return getDeckCards.remove(0);
+		}
+	public int getDeckSize(){
 		return getDeckCards.size();
 	}
 }
