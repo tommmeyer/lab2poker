@@ -10,8 +10,11 @@ public class Hand {
 	ArrayList<Integer> cardRnk = new ArrayList<Integer>();
 	Deck deck = new Deck();
 	public static HandScore handscore;
-	private Hand(){
-		for (int drawNumber = 0; drawNumber < 5; drawNumber++){
+	public Hand(){
+
+	}
+	public void CreateHand(){
+		while (getHandCards.size() < 5){
 			Card newCard = deck.Draw();
 			this.getHandCards.add(newCard);
 			Integer suit = newCard.getiCardSuit();
@@ -19,6 +22,28 @@ public class Hand {
 			Integer rank = newCard.getiCardRnk();
 			this.cardRnk.add(rank);
 		}
+		Collections.sort(cardSuit);
+		Collections.sort(cardRnk);
+	}
+	private int getHandSize(){
+		return getHandCards.size();
+	}
+	public void setHand(Card cardOne, Card cardTwo, Card cardThree, Card cardFour, Card cardFive){
+		this.getHandCards.add(cardOne);
+		this.getHandCards.add(cardTwo);
+		this.getHandCards.add(cardThree);
+		this.getHandCards.add(cardFour);
+		this.getHandCards.add(cardFive);
+		this.cardSuit.add(cardOne.getiCardSuit());
+		this.cardSuit.add(cardTwo.getiCardSuit());
+		this.cardSuit.add(cardThree.getiCardSuit());
+		this.cardSuit.add(cardFour.getiCardSuit());
+		this.cardSuit.add(cardFive.getiCardSuit());
+		this.cardRnk.add(cardOne.getiCardRnk());
+		this.cardRnk.add(cardTwo.getiCardRnk());
+		this.cardRnk.add(cardThree.getiCardRnk());
+		this.cardRnk.add(cardFour.getiCardRnk());
+		this.cardRnk.add(cardFive.getiCardRnk());
 		Collections.sort(cardSuit);
 		Collections.sort(cardRnk);
 	}
