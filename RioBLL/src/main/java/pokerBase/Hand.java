@@ -14,7 +14,7 @@ public class Hand {
 
 	}
 	public void CreateHand(){
-		while (getHandCards.size() < 5){
+		for (int card =0;card < 5;card++){
 			Card newCard = deck.Draw();
 			this.getHandCards.add(newCard);
 			Integer suit = newCard.getiCardSuit();
